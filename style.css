@@ -1,0 +1,633 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url(/Images/flowers.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Colonne gauche */
+
+/* Carte nom contact */
+.cardId {
+  position: relative;
+  width: 350px;
+  height: 190px;
+  margin-top: 50px;
+  border-radius: 20px;
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.cardId:hover {
+  height: 450px;
+}
+.photoBx {
+  position: absolute;
+  transform: translateX(-50%);
+  top: -50px;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: 0.5s;
+}
+.cardId:hover .photoBx {
+  width: 250px;
+  height: 250px;
+}
+
+.photoBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardId .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.cardId .content .details {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(150px);
+}
+.cardId:hover .content .details {
+  transform: translateY(0px);
+}
+
+.cardId .content .details h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(4, 20, 46);
+  line-height: 1.2em;
+}
+.cardId .content .details h2 span {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+.cardId .content .details .data {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.cardId .content .details .data h3 {
+  font-size: 1em;
+  color: rgb(4, 20, 46);
+  line-height: 2.3em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cardId .content .details .data h3 span {
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color: #03a9f4;
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.mail {
+  text-decoration-line: none;
+  color: rgb(4, 20, 46);
+}
+/* Fin Carte nom contact */
+
+/* Menu diplomes */
+.navigation {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.75s;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.navigation.active {
+  width: 350px;
+  height: 230px;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.75s;
+}
+.navigation .userBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.navigation.active .userBx {
+  width: calc(100% - 60px);
+  transition-delay: 0s;
+}
+.navigation .userBx .navname {
+  white-space: nowrap;
+  margin-left: 125px;
+  font-size: 24px;
+  color: #003147;
+}
+
+.navigation .userBx .imgBx img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.navigation .menuToggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #555;
+  transform: translateY(-10px);
+  box-shadow: 0 10px #555;
+  transition: 0.5s;
+}
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #555;
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+.navigation.active .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 #555;
+}
+.navigation.active .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+.menu {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.menu li {
+  display: grid;
+  grid-template-columns: 50px 120px 100px;
+  align-items: center;
+  margin: 20px 10px;
+  font-size: 1em;
+  gap: 10px;
+  color: rgb(4, 20, 46);
+}
+.menu li h4,
+.menu li h5 {
+  font-weight: 500;
+}
+/* Fin Menu diplomes */
+
+/* Début langues et intérets */
+.cardA {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 85px;
+  width: 175px;
+  height: 250px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: 1s;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.cardA:hover {
+  transform: translateX(50%);
+}
+.cardA .imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: 1s;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.cardA:hover .imgBox {
+  transform: rotateY(-180deg);
+}
+.cardA .imgBox img {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+.cardA .imgBox img:nth-child(2) {
+  transform: rotateY(180deg);
+}
+.cardA .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardA .details .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cardA .details .content h2 {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+.cardA .details .content .language ul {
+  list-style: none;
+  font-size: 1.1em;
+}
+.cardA .details .content .language img {
+  width: 25px;
+  height: 24px;
+}
+.cardA .details .content .interest {
+  margin-top: 30px;
+  font-size: 1.1em;
+}
+.cardA .details .content .interest ul {
+  list-style: none;
+}
+.interest ul li .fa {
+  color: #03a9f4;
+  font-size: 18px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+/* Colonne droite */
+
+/* Début profil */
+.card1 {
+  position: relative;
+  width: 200px;
+  height: 190px;
+  display: flex;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.card1:hover {
+  width: 900px;
+}
+.card1 .imgBx {
+  position: relative;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  border-radius: 20px;
+  background: url(./Images/profil-bcg.jpg);
+  background-size: cover;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.card1 .imgBx h2 {
+  color: #fff;
+  max-width: 250px;
+  transition: 0.5s ease-in-out;
+}
+.card1:hover .imgBx h2 {
+  color: #fff;
+  opacity: 0.8;
+  transform: rotate(-90deg) translateX(-10px);
+}
+
+.card1 .details {
+  position: absolute;
+  left: 0;
+  min-width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+.card1:hover .details {
+  left: 200px;
+}
+.card1 .details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+}
+/* Fin profil */
+
+/* Début expérience */
+.card2 {
+  position: relative;
+  width: 200px;
+  height: 310px;
+  display: flex;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.card2:hover {
+  width: 900px;
+}
+.card2 .imgBx {
+  position: relative;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  border-radius: 20px;
+  background: url(./Images/exp-bcg.jpg);
+  background-size: cover;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.card2 .imgBx h2 {
+  color: #fff;
+  max-width: 250px;
+  transition: 0.5s ease-in-out;
+}
+.card2:hover .imgBx h2 {
+  color: #fff;
+  opacity: 0.8;
+  transform: rotate(-90deg) translateX(-10px);
+}
+
+.card2 .details {
+  position: absolute;
+  left: 0;
+  min-width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+  border-radius: 20px;
+}
+.card2:hover .details {
+  left: 200px;
+}
+.card2 .details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+}
+.year_company h5 {
+  text-transform: uppercase;
+  color: #848c90;
+  font-weight: 600;
+}
+
+.box .text h4 {
+  text-transform: uppercase;
+  color: #2a7da2;
+  font-size: 16px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  margin: 15px;
+}
+
+/* Fin expérience */
+
+/* Début compétences */
+.card3 {
+  position: relative;
+  width: 200px;
+  height: 350px;
+  display: flex;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.card3:hover {
+  width: 900px;
+}
+.card3 .imgBx {
+  position: relative;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  background: url(./Images/comp-bcg.png);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card3 .imgBx h2 {
+  color: #fff;
+  max-width: 250px;
+  transition: 0.5s ease-in-out;
+}
+.card3:hover .imgBx h2 {
+  color: #fff;
+  opacity: 0.8;
+  transform: rotate(-90deg) translateX(-10px);
+}
+
+.card3 .details {
+  left: 0;
+  min-width: 700px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+  list-style-position: inside;
+}
+
+.card3 .box {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.card3:hover .details {
+  left: 500px;
+}
+.card3 .details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+}
+
+.box h4 {
+  text-transform: uppercase;
+  color: #2a7da2;
+  font-size: 16px;
+  font-weight: 600;
+}
+.box ul {
+  font-weight: 400;
+}
+/* Fin compétences */
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .interest ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about .box {
+    flex-direction: column;
+  }
+  .about .box .year_company {
+    margin-bottom: 5px;
+  }
+  .interest ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .skills .box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
